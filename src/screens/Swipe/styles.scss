@@ -2,4 +2,13 @@
     .itemName{
         background-color: pink;
     }
+
+    .swipeContainer{
+        width: 300vw;
+        height: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

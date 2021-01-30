@@ -1,14 +1,42 @@
 import * as React from 'react';
+import FavouritesItemCard from './components/Itemcard'
+
+
 
 function Favourites() {
-    const store = JSON.parse(localStorage.getItem("favouriteStore") || "{}");
-    const [favouriteList, setFavouriteList] = React.useState(store)
-    return (
-    <div> {favouriteList && 
-        favouriteList.items && 
-        favouriteList.items.map((item:any) => (<div>{item.item_id})</div>))}
+    React.useEffect(()=>{
+        const store = JSON.parse(localStorage.getItem("favouriteStore") || "{}");
+        setFavouriteList(store.items);
+    }, [])
+    const [favouriteList, setFavouriteList] = React.useState([]);
+
+    function deleteFavourite(toDelete: {
+        item_id: number,
+        shop_id: number,
+        cover:string,
+        name:string
+    }) {
+        setFavouriteList(favouriteList.filter(favouriteItem => favouriteItem.item_id !== toDelete.item_id))  
     
-    </div>
+    }
+
+    
+
+    return (
+        <div>
+            {favouriteList.map((item: {
+                item_id: number,
+                shop_id: number,
+                cover:string,
+                name:string
+            }) => (
+                <div key={item.item_id}>
+                    <FavouritesItemCard item={item}/>
+                    <button onClick={()=>deleteFavourite(item)}>del</button>
+                </div>
+                
+            ))}
+        </div>
     );
 }
 

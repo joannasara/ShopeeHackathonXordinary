@@ -10,6 +10,9 @@ import s from './styles.scss';
 import favouriteStore from 'screens/favouriteStore';
 import { store } from 'data/store';
 
+import HeartSvg from './heart.svg';
+import CloseSvg from './close.svg';
+
 const MAX_ITEM_LIMIT = 20;
 
 function Swipe(props: RouteComponentProps) {
@@ -69,6 +72,7 @@ function Swipe(props: RouteComponentProps) {
     }
     return (
         <>
+        <div className={s.swipeContainer}><HeartSvg/><CloseSvg/></div>
         {item && !!item.name && index >= 0 && (
             <div className={s.itemCard}>
                 <img src = {item.cover} />
