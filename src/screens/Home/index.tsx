@@ -8,6 +8,7 @@ import './styles.scss';
 
 function Home() {
   // Start creating your awesome app here
+  const keywords = ['iphone', 'sports'];
   return (
     <div>
       <LinkBack>Back</LinkBack>
@@ -22,7 +23,14 @@ function Home() {
       <br />
       <br />
 
-      <div>Hello World!</div>
+      <div>
+        Hello World! 
+        {
+          keywords.map(keyword => <Link to={`/Swipe?keyword=${keyword}`}>
+            <button>{keyword}</button>
+          </Link> )
+        }
+      </div>
     </div>
   );
 }
