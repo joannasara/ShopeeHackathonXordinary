@@ -1,6 +1,14 @@
 :local {
-    .keywords {
+    .wrapper{
+        display: grid;
+        width:100vw;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+    }
+    .keywords{
         background: transparent;
         border: 1px solid rgba(0,0,0,0.3);
+        font-size: 1.2em;
+        padding: 5px;
     }
 }

@@ -8,7 +8,7 @@ function Favourites() {
         setFavouriteList(store.items);
     }, []);
     
-    const [favouriteList, setFavouriteList] = React.useState([])
+    const [favouriteList, setFavouriteList] = React.useState([]);
 
     function deleteFavourite(toDelete: {
         item_id: number,
