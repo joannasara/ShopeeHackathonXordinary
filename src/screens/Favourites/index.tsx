@@ -10,8 +10,7 @@ function Favourites() {
         setFavouriteList(store.items);
     }, []);
     
-    const store = JSON.parse(localStorage.getItem('favouriteStore') || "{}");
-    const [favouriteList, setFavouriteList] = React.useState([store]);
+    const [favouriteList, setFavouriteList] = React.useState([]);
 
     function deleteFavourite(toDelete: {
         item_id: number,

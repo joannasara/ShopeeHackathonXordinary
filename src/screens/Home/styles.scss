@@ -1,5 +1,11 @@
 :local {
-    .keywords {
+    .wrapper{
+        display: grid;
+        width:100vw;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+    }
+    .keywords{
         background: transparent;
         width: 200px;
         border: 3px solid rgba(25,0,100,0.3);
