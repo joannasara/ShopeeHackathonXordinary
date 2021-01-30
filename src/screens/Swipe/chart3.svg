@@ -1,7 +1,7 @@
-<svg viewBox="30 -50 200 200" class="chart">
+<svg viewBox="50 -50 200 200" class="chart">
   <polyline
      fill="none"
-     stroke="#0074d9"
+     stroke="#ee4d2d"
      stroke-width="3"
      points="
        0,20

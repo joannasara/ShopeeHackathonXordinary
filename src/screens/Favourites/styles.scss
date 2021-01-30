@@ -1,8 +1,19 @@
 :local {
+    
     .button {
+        text-align: center;
+        position: static;
+        right: 0px;
         display: inline-block;
         font-size: 1.5em;
         padding: 12px;
         margin: 12px;
+        color: white;
+        background-color: #ee4d2d;
+    }
+
+    .div {
+        text-align: center;
+
     }
 }

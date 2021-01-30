@@ -1,17 +1,21 @@
 :local {
     .wrapper{
+        text-align: center;
         display: grid;
         width:100vw;
+        padding-top: 10px;
+        row-gap: 15px;
         grid-template-rows: auto auto;
         grid-template-columns: auto auto;
     }
     .keywords{
-        background: transparent;
-        width: 200px;
-        border: 3px solid rgba(25,0,100,0.3);
-        border-radius: 10%;
+        background-image: linear-gradient(to bottom, #ee4d2d , #ff6533);
+        color: #ffffff;
+        width: 80%;
+        height: 100px;
+        border-radius:5%;
         display: inline-block;
-        font-size: 1.5em;
+        font-size: 1.8em;
         padding: 12px;
         margin: 12px;
     }

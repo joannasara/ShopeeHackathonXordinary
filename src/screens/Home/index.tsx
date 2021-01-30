@@ -9,7 +9,7 @@ import { store } from 'data/store';
 
 function Home() {
   // Start creating your awesome app here
-  const keywords = ['iphone', 'sports', 'laptops', 'boba'];
+  const keywords = ['iPhone', 'Sports', 'Laptops', 'Boba', 'Home', 'TV', 'Shoes', 'Fashion', 'Books', 'Travel', 'Makeup', 'Noodle', 'Bags', 'Keyboards', 'Software', 'Sandals', 'School', 'Dining', 'Appliances', 'Voucher'];
   return (
     <div className={s.wrapper}>
       {keywords.map((keyword) => (
