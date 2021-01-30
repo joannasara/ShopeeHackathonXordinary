@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Demo from '../Demo';
 
 import Home from 'screens/Home';
+import Swipe from 'screens/Swipe';
+import Favourites from 'screens/Favourites';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/demo' component={Demo} />
 
         {/* Create your app routes here  */}
+        <Route path='/Swipe' component={Swipe} />
+        <Route path='/Favourites' component={Favourites} />
         <Route path='/' component={Home} />
       </Switch>
     </Router>
