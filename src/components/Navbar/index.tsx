@@ -14,12 +14,14 @@ const routeMap: any = {
 
 function Navbar ({location}: RouteComponentProps) {
     return (
+
     <div className={s.navbar}>
         <div></div>
         {routeMap[String(location.pathname)]}
         <HomeSvg className={s.homeIcon}/>
         
     </div>
+    
     )
 }
 
