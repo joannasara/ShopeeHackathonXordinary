@@ -72,24 +72,26 @@ function Swipe(props: RouteComponentProps) {
         <>
         {item && !!item.name && index >= 0 && (
             <div className={s.itemCard}>
-                <img src = {item.cover} />
+                <img className={s.img} src = {item.cover} />
                 <div className={s.itemName}>{item.name}</div>
+                <br />
                 <div className={s.itemDetails}>
                     <div>{`$${item.price}`}</div>
-                    <div>{Array(Math.floor(Number(item.rating))).fill('star')}</div>
+                    <div>{Array(Math.floor(Number(item.rating))).fill('⭐')}</div>
                 </div>
+                <br />
                 <div className={s.itemStock}>
-                    <div>sold: {item.sold}</div>
-                    <div>stock: {item.stock}</div>
+                    <div>Sold: {item.sold}</div>
+                    <div>Stock: {item.stock}</div>
                 </div>
             </div>
         )}
         {
             index < 0 && <Link to={'/Favourites'}>link to favourites</Link>
         }
-        <div>
-            <button onClick={leftClickIndex}>left button</button>
-            <button onClick={rightClickIndex}>right button</button>
+        <div className={s.buttons}>
+            <button className={s.button} onClick={leftClickIndex}>Add to Favourites</button>
+            <button className={s.button} onClick={rightClickIndex}>right button</button>
         </div>
         </>
 
