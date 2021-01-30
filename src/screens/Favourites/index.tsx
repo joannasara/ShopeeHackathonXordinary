@@ -1,5 +1,7 @@
 import * as React from 'react';
-import FavouritesItemCard from './components/Itemcard'
+import FavouritesItemCard from './components/Itemcard';
+
+import s from './styles.scss';
 
 
 function Favourites() {
@@ -8,7 +10,8 @@ function Favourites() {
         setFavouriteList(store.items);
     }, []);
     
-    const [favouriteList, setFavouriteList] = React.useState([])
+    const store = JSON.parse(localStorage.getItem('favouriteStore') || "{}");
+    const [favouriteList, setFavouriteList] = React.useState([store]);
 
     function deleteFavourite(toDelete: {
         item_id: number,
@@ -16,7 +19,8 @@ function Favourites() {
         cover: string,
         name: string
     }) {
-        setFavouriteList(favouriteList.filter(favouriteItem => favouriteItem.item_id !== toDelete.item_id));
+        setFavouriteList(favouriteList.filter(favouriteItem => !(favouriteItem.item_id === toDelete.item_id && favouriteItem.shop_id === toDelete.shop_id
+            && favouriteItem.cover === toDelete.cover && favouriteItem.name === toDelete.name)));
     }
 
     return (
@@ -29,7 +33,7 @@ function Favourites() {
         }) => (
             <div key={item.item_id}>
                 <FavouritesItemCard item = {item}/>
-                <button onClick={() => deleteFavourite(item)}>del</button>
+                <button className={s.button} onClick={() => deleteFavourite(item)}>del</button>
             </div>
         ))}
     

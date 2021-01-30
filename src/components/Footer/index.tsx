@@ -15,7 +15,7 @@ function Footer ({location}: RouteComponentProps) {
     if (location.pathname === '/Favourites') {
         return null;
     }
-    return <div className={s.Footer}>
+    return <div className={s.footer}>
         <Link to={'/Favourites'}>Favourites</Link>
     </div>
 }
