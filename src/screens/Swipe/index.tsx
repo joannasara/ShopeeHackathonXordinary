@@ -67,6 +67,7 @@ function Swipe(props: RouteComponentProps) {
             setIndex(-1);
         }
     }
+    
     return (
         <>
         {item && !!item.name && index >= 0 && (

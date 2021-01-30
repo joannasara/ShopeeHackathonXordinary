@@ -4,33 +4,19 @@ import * as React from 'react';
 import { Link, LinkBack } from 'libraries/components/Link';
 
 // Stylings
-import './styles.scss';
+import s from './styles.scss';
+import { store } from 'data/store';
 
 function Home() {
   // Start creating your awesome app here
-  const keywords = ['iphone', 'sports'];
+  const keywords = ['iphone', 'sports', 'laptops', 'boba'];
   return (
-    <div>
-      <LinkBack>Back</LinkBack>
-
-      <br />
-      <br />
-
-      <Link to='/demo' replace>
-        Open Demo App
-      </Link>
-
-      <br />
-      <br />
-
-      <div>
-        Hello World! 
-        {
-          keywords.map(keyword => <Link to={`/Swipe?keyword=${keyword}`}>
-            <button>{keyword}</button>
-          </Link> )
-        }
-      </div>
+    <div className={s.wrapper}>
+      {keywords.map((keyword) => (
+        <Link to={`/Swipe?keyword=${keyword}`}>
+          <button className={s.keywords}>{keyword}</button>
+        </Link> 
+      ))}
     </div>
   );
 }
